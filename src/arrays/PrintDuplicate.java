@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class PrintDuplicate {
@@ -14,13 +15,22 @@ public class PrintDuplicate {
 			for(int j=i+1; j<array.length; j++) {
 				
 				if(array[i]==array[j]) {
-				
-				
-				System.out.println("Duplicate value:-"+array[i]);
+								
+		System.out.println("Duplicate value:-"+array[i]);
 				
 				}
 				
 			}
+		}
+		   HashSet<Integer> seen = new HashSet<>();
+		for(int num : array) {		
+			if(seen.contains(num)) {
+				
+				System.out.println("Duplicate Number:-"+num);
+			}else {
+				seen.add(num);
+			}
+			
 		}
 
 	}
